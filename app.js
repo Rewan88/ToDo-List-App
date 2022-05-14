@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/todo", require("./routes/todo"));
-app.use('/user', '/routes/user.js');
+app.use('/user', require('./routes/user.js'));
 
 // log any error caused when connect to database
 db().catch((err) => console.log(err));
