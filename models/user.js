@@ -27,7 +27,7 @@ const User = model("User", userSchema);
 // Sign up validation schema
 const signUpSchema = Joi.object({
     name: Joi.string().min(3).max(25).required(),
-    username: Joi.string().username().required(),
+    username: Joi.string().required(),
     password: Joi.string().alphanum().min(8).max(16).required(),
     password2: Joi.string()
         .valid(Joi.ref("password"))
@@ -37,7 +37,7 @@ const signUpSchema = Joi.object({
 
 // Log in validation schema
 const logInSchema = Joi.object({
-    username: Joi.string().username().required(),
+    username: Joi.string().required(),
     password: Joi.string().alphanum().min(8).max(16).required(),
 });
 
